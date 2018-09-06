@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "450689493432",
+    "firebase_url": "https://cloudprocess-b82c3.firebaseio.com",
+    "project_id": "cloudprocess-b82c3",
+    "storage_bucket": "cloudprocess-b82c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450689493432:android:a522a50e05b70e20",
+        "android_client_info": {
+          "package_name": "com.studia.qwerty.cloudprocess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450689493432-r4evpnv1jg1t3nkb323dmoe1810hv37l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.studia.qwerty.cloudprocess",
+            "certificate_hash": "14958b470dd23dfdf3b7d5ca86ec34f0cd438b5a"
+          }
+        },
+        {
+          "client_id": "450689493432-3dvtu03dd3ff3e04eiajbj2vqtuh54qj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOfoHG5cYaUoVCLMBCU_8b0NRFU9i33f0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450689493432-3dvtu03dd3ff3e04eiajbj2vqtuh54qj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
