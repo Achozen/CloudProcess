@@ -1,5 +1,6 @@
 package com.studia.qwerty.cloudprocess.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         getNotesFromServer()
+        addNoteButton.setOnClickListener { startActivity(Intent(this, AddNoteActivity::class.java)) }
     }
 
     private fun getNotesFromServer() {
@@ -25,17 +27,11 @@ class MainActivity : AppCompatActivity() {
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                val t = object : GenericTypeIndicator<List<@JvmSuppressWildcards Note>>() {
-
-                }
-
+                val t = object : GenericTypeIndicator<HashMap<String, @JvmSuppressWildcards Note>>() {}
                 val noteArray = dataSnapshot.getValue(t)
                 if (noteArray != null) {
                     setupRecyclerView(noteArray)
                 }
-
 
                 Log.d("TAGTAG", "Value is: " + noteArray.toString()!!)
             }
@@ -47,13 +43,10 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun setupRecyclerView(notes: List<Note>) {
+    private fun setupRecyclerView(notes: HashMap<String, Note>) {
         val layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
         recyclerView.layoutManager = layoutManager
-
-        /*       val list = arrayListOf<Note>()
-               list.addAll(listOf(Note("Title1", "VFBDFBFBD", 111111), Note("Title2", "VFBDFvdvBFBD", 11), Note("Title3", "VFBDFBdfvFBD", "1111221")))*/
         val notesAdapter = NotesAdapter(notes, this)
         recyclerView.adapter = notesAdapter
     }
